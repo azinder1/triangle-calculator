@@ -2,28 +2,28 @@ require ('rspec')
 require('triangle')
 
 describe(Triangle) do
-  describe ('#side1') do
-    it ('returns the side1 property of the object') do
-      new_triangle = Triangle.new(12, 14, 24)
-      expect(new_triangle.side1()).to(eq(12))
-    end
-  end
   describe('#triangle?') do
     it ('returns whether the object is a triangle') do
-      new_triangle = Triangle.new(15,15,29)
-      expect(new_triangle.triangle?()).to(eq(false))
+      new_triangle = Triangle.new(15,15,31)
+      expect(new_triangle.triangle()).to(eq("This is not a triangle"))
     end
   end
   describe('#equilateral') do
     it ('returns whether a triangle is equilateral') do
       new_triangle = Triangle.new(15,15,15)
-      expect(new_triangle.equilateral?()).to(eq(true))
+      expect(new_triangle.triangle()).to(eq("This is an equilateral"))
     end
   end
   describe ('#isosceles') do
     it('returns whether a triangle is isosceles') do
       new_triangle = Triangle.new(15, 16, 17)
-      expect(new_triangle.isosceles?()).to(eq(true))
+      expect(new_triangle.triangle()).to(eq("This is an isosceles"))
+    end
+  end
+  describe ('#scalene') do
+    it('returns whether a triangle is a scalene') do
+      new_triangle = Triangle.new(14, 14, 17)
+      expect(new_triangle.triangle()).to(eq("This is an scalene"))
     end
   end
 end
